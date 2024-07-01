@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ相册</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>QQ相册</h1>
+        <button id="createAlbumBtn">新建相册</button>
+        <div class="albums"></div>
+        <!-- 创建新相册 -->
+        <div id="albumModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>创建新相册</h2>
+                <form id="createAlbumForm">
+                    <label for="albumTitle">相册标题:</label>
+                    <input type="text" id="albumTitle" name="albumTitle" required>
+                    <button type="submit">创建</button>
+                </form>
+            </div>
+        </div>
+        <!-- 上传照片 -->
+        <div id="photoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>上传照片</h2>
+                <form id="uploadPhotosForm" enctype="multipart/form-data">
+                    <label for="fileInput">选择照片:</label>
+                    <input type="file" id="fileInput" name="photos" multiple required title="请选择一个或多个照片">
+                    <button type="submit">上传</button>
+                    <input type="hidden" id="uploadAlbumTitle" name="albumTitle">
+                </form>
+            </div>
+        </div>
+
+        <!-- 查看相册中的照片 -->
+        <div id="photoViewModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>查看相册</h2>
+                <div class="photos"></div>
+                <button id="backToAlbums">返回相册</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery.uploadfile.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
